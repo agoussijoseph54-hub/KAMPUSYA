@@ -2,424 +2,141 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#07251d">
-<meta name="description" content="KAMPUSYA, la communauté universitaire pour publier, partager et découvrir des travaux, TD, exposés, mémoires et sujets d'examen.">
-<title>KAMPUSYA — Le savoir se partage</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<style>
-:root{--bg:#07251d;--bg2:#0d3a2d;--lime:#d7ff72;--mint:#7dffb8;--ink:#10271f;--muted:#66776d;--soft:#f3f7f0;--line:#e0e9e0;--radius:20px}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:90px}
-body{margin:0;font-family:"Plus Jakarta Sans",sans-serif;color:var(--ink);line-height:1.65;background:#fff}
-button,input,textarea,select{font:inherit}
-button,a{touch-action:manipulation}
-a{color:inherit;text-decoration:none}
-button{cursor:pointer}
-.header{position:sticky;top:0;z-index:100;background:var(--bg);color:white;padding:12px 5%;display:flex;align-items:center;justify-content:space-between;gap:20px;border-bottom:1px solid #ffffff18}
-.brand{display:flex;align-items:center;gap:10px;font-size:1.2rem;font-weight:800;letter-spacing:-.5px;white-space:nowrap}
-.brand-icon{height:43px;width:43px;border-radius:13px;background:var(--lime);color:var(--bg);display:grid;place-items:center;font-size:1.5rem}
-.brand-dot{color:var(--lime)}
-.nav{display:flex;align-items:center;gap:20px;font-size:.84rem;font-weight:700}
-.nav a:not(.btn){color:#e3eee7}
-.nav a:hover,.nav a.active{color:var(--lime)}
-.menu-toggle{display:none;background:none;border:0;color:white;font-size:1.7rem}
-.btn{border:1px solid transparent;border-radius:999px;padding:12px 19px;font-size:.86rem;font-weight:800;display:inline-flex;align-items:center;justify-content:center;gap:8px;transition:.2s}
-.btn:hover{transform:translateY(-2px)}
-.btn-lime{background:var(--lime);color:var(--bg)}
-.btn-outline{border-color:#ffffff75;color:white;background:#ffffff0a}
-.btn-dark{background:var(--bg);color:white}
-.btn-light{background:white;border-color:var(--line);color:var(--ink)}
-.hero{min-height:630px;position:relative;display:flex;align-items:center;overflow:hidden;color:white;padding:85px 8% 110px;background-color:var(--bg);background-image:url("https://www.southampton.ac.uk/sites/default/files/styles/max_width_16_9_1300x750/public/2021-11/students-laptop-law-library-collection.jpg.webp?itok=Iogi18MT");background-size:cover;background-position:center 45%}
-.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#041e17f5 0%,#041e17dc 48%,#041e1780 100%)}
-.hero-content{position:relative;max-width:820px}
-.eyebrow{display:block;font-size:.72rem;letter-spacing:2px;font-weight:800;color:var(--mint);margin-bottom:18px}
-.hero h1{font-size:clamp(2.7rem,6vw,5.4rem);line-height:1.06;letter-spacing:-3px;margin:0 0 23px}
-.hero h1 span{color:var(--mint)}
-.hero p{max-width:680px;color:#dbe9df;font-size:1.03rem}
-.actions{display:flex;flex-wrap:wrap;gap:12px;margin:25px 0}
-.tags{display:flex;gap:9px;flex-wrap:wrap;margin-top:30px}
-.tags span{border:1px solid #ffffff55;border-radius:999px;padding:6px 12px;font-size:.75rem}
-.hero-bottom{position:absolute;bottom:0;left:0;right:0;background:#041b14bd;padding:15px 8%;display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap;font-size:.7rem;letter-spacing:1px}
-.section{padding:80px 7%}
-.heading{text-align:center;max-width:760px;margin:0 auto 38px}
-.heading .eyebrow{color:#367c4c}
-.heading h2{font-size:clamp(2rem,4vw,3.25rem);line-height:1.15;letter-spacing:-1.5px;margin:0 0 16px}
-.heading h2 span{color:#367c4c}
-.heading p{color:var(--muted)}
-.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
-.card{border:1px solid var(--line);border-radius:var(--radius);padding:27px;background:white;transition:.2s}
-.card:hover{transform:translateY(-4px);box-shadow:0 15px 40px #07251d10}
-.card-icon{width:49px;height:49px;border-radius:14px;background:#e9f8df;display:grid;place-items:center;font-size:1.5rem;color:#20563b}
-.card h3{margin:16px 0 8px;font-size:1.08rem}
-.card p{color:var(--muted);font-size:.91rem}
-.card-link{color:#26653e;font-size:.85rem;font-weight:800}
-.dark-section{background:var(--bg);color:white}
-.dark-section .heading h2{color:white}
-.dark-section .heading p{color:#c8dbd0}
-.step{border:1px solid #ffffff20;border-radius:var(--radius);padding:25px;background:#ffffff09}
-.step b{font-size:2rem;color:var(--lime)}
-.step p{color:#c7d8ce}
-.join{background:var(--bg2);color:white;text-align:center;padding:75px 7%}
-.join h2{font-size:clamp(2rem,4vw,3.3rem);line-height:1.2;max-width:800px;margin:auto}
-.join p{color:#d3e4d9}
-.footer{background:#041b14;color:#e1eee6;text-align:center;padding:38px 7% 24px}
-.footer .brand{justify-content:center}
-.footer p,.footer small{color:#adc4b5}
-.footer-links{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin:22px 0;font-size:.85rem}
-.view{display:none;min-height:65vh}
-.view.active{display:block}
-.page-hero{padding:58px 7%;background:var(--bg);color:white;text-align:center}
-.page-hero h1{font-size:clamp(2.2rem,5vw,3.6rem);line-height:1.15;margin:0 0 14px}
-.page-hero p{max-width:700px;margin:auto;color:#cfdfd4}
-.content{max-width:1000px;margin:auto;padding:42px 6% 70px}
-.panel{border:1px solid var(--line);border-radius:var(--radius);padding:25px;margin-bottom:22px}
-.panel h2{margin-top:0}
-.form{display:grid;gap:15px}
-.form label{display:grid;gap:7px;font-size:.9rem;font-weight:700}
-.form input,.form textarea,.form select,.search-input{width:100%;padding:13px 14px;border:1px solid #ccd9cf;border-radius:11px;background:white;color:var(--ink)}
-.form textarea{min-height:125px;resize:vertical}
-.notice{padding:14px 16px;background:#eef8e7;border-radius:12px;color:#315b37;font-size:.88rem;margin:15px 0}
-.muted{color:var(--muted)}
-.post{border:1px solid var(--line);border-radius:17px;padding:22px;margin:15px 0}
-.post-top{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
-.post small{color:var(--muted)}
-.post h3{margin:9px 0}
-.post p{white-space:pre-wrap;overflow-wrap:anywhere}
-.post-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:15px}
-.small-btn{border:1px solid var(--line);background:white;border-radius:999px;padding:8px 13px;font-size:.82rem;font-weight:700}
-.small-btn:hover{background:#eff8e8}
-.comment-list{margin-top:12px;padding-top:10px;border-top:1px solid var(--line)}
-.comment{padding:8px 0;font-size:.88rem}
-.comment-form{display:flex;gap:8px;margin-top:12px}
-.comment-form input{min-width:0;flex:1;padding:10px;border:1px solid var(--line);border-radius:10px}
-.pill{display:inline-block;padding:4px 9px;border-radius:999px;background:#edf6e8;color:#31623e;font-size:.72rem;font-weight:800}
-.empty{text-align:center;color:var(--muted);padding:30px 10px}
-.status{font-size:.9rem;margin-top:10px;color:#28623c}
-.profile-row{display:flex;align-items:center;gap:12px}
-.avatar{width:43px;height:43px;border-radius:50%;background:var(--bg2);color:var(--lime);display:grid;place-items:center;font-weight:800}
-.hidden{display:none!important}
-@media(max-width:1000px){.nav{gap:12px;font-size:.76rem}.header{padding-inline:3%}}
-@media(max-width:760px){
- .menu-toggle{display:block}
- .nav{display:none;position:absolute;top:68px;left:0;right:0;background:var(--bg);padding:20px;flex-direction:column;align-items:stretch}
- .nav.open{display:flex}
- .nav .btn{width:100%}
- .hero{padding:70px 6% 110px;min-height:650px;background-position:60% center}
- .hero h1{letter-spacing:-1.5px}
- .hero-bottom{padding-inline:6%}
- .section{padding:60px 6%}
- .grid{grid-template-columns:1fr}
- .join{padding:60px 6%}
- .content{padding-inline:5%}
- .comment-form{flex-direction:column}
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#07251d">
+  <meta name="description" content="KAMPUSYA, la communauté universitaire pour publier, partager et découvrir des travaux, TD, exposés, mémoires et sujets d'examen.">
+  <title>KAMPUSYA — Le savoir se partage</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<header class="header">
-  <a class="brand" href="#accueil" data-page="accueil"><span class="brand-icon">K</span><span>KAMPUSYA<span class="brand-dot">.</span></span></a>
-  <button class="menu-toggle" id="menuToggle" aria-label="Ouvrir le menu">☰</button>
-  <nav class="nav" id="navigation">
-    <a href="#accueil" data-page="accueil">Accueil</a>
-    <a href="#communaute" data-page="communaute">Communauté</a>
-    <a href="#publier" data-page="publier">Publier</a>
-    <a href="#discussions" data-page="discussions">Discussions</a>
-    <a href="#messages" data-page="messages">Messages</a>
-    <a href="#connexion" data-page="connexion">Connexion</a>
-    <a class="btn btn-lime" href="#inscription" data-page="inscription">Créer un compte</a>
-  </nav>
-</header>
+  <header class="header">
+    <a class="brand" href="index.html">
+      <span class="brand-icon">K</span>
+      <span>KAMPUSYA<span class="brand-dot">.</span></span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Ouvrir le menu">☰</button>
+    <nav class="navigation" id="navigation">
+      <a class="active" href="index.html">Accueil</a>
+      <a href="communaute.html">Communauté</a>
+      <a href="discussions.html">Discussions</a>
+      <a href="#ressources">Ressources</a>
+      <a href="contact.html">Contact</a>
+      <a class="nav-login" href="connexion.html">Connexion</a>
+      <a class="button button-lime" href="publier.html">Publier un travail</a>
+    </nav>
+  </header>
 
-<main>
-<section class="view active" id="view-accueil">
-  <div class="hero">
-    <div class="hero-content">
-      <span class="eyebrow">LA COMMUNAUTÉ UNIVERSITAIRE QUI VOUS FAIT GRANDIR</span>
-      <h1>Le savoir prend de la valeur <span>quand il se partage.</span></h1>
-      <p>KAMPUSYA rassemble les étudiants autour des connaissances, des travaux universitaires et de l'entraide. Publie, découvre, échange et progresse avec les autres.</p>
-      <div class="actions">
-        <a class="btn btn-lime" href="#communaute" data-page="communaute">Explorer la communauté ↗</a>
-        <a class="btn btn-outline" href="#inscription" data-page="inscription">Créer mon compte</a>
+  <main>
+    <section class="hero">
+      <div class="hero-shade"></div>
+      <div class="hero-content">
+        <span class="eyebrow">LA COMMUNAUTÉ UNIVERSITAIRE QUI VOUS FAIT GRANDIR</span>
+        <h1>Le savoir prend de la valeur <span>quand il se partage.</span></h1>
+        <p>KAMPUSYA rassemble les étudiants autour des connaissances, des travaux universitaires et de l'entraide. Publie, découvre, échange et progresse avec les autres.</p>
+        <div class="hero-actions">
+          <a class="button button-lime" href="communaute.html">Explorer la communauté ↗</a>
+          <a class="button button-outline" href="connexion.html">Créer mon compte</a>
+        </div>
+        <div class="hero-tags">
+          <span>TD & exercices</span><span>Exposés</span><span>Mémoires</span>
+          <span>Sujets d'examen</span><span>Discussions</span>
+        </div>
       </div>
-      <div class="tags"><span>TD & exercices</span><span>Exposés</span><span>Mémoires</span><span>Sujets d'examen</span><span>Discussions</span></div>
+      <div class="hero-bottom">
+        <span>APPRENDRE ENSEMBLE. RÉUSSIR ENSEMBLE.</span>
+        <span>Une idée partagée peut faire la différence.</span>
+      </div>
+    </section>
+
+    <section class="section intro" id="ressources">
+      <div class="section-heading">
+        <span class="eyebrow dark-eyebrow">TON ESPACE DE TRAVAIL</span>
+        <h2>Tout ce qui fait avancer <span>ta vie universitaire.</span></h2>
+        <p>Une plateforme conçue pour valoriser les travaux étudiants et rendre les connaissances plus accessibles.</p>
+      </div>
+      <div class="feature-grid">
+        <a class="feature-card" href="communaute.html">
+          <span class="feature-icon">▤</span>
+          <h3>Bibliothèque universitaire</h3>
+          <p>Découvre des TD, exposés, mémoires, fiches de révision et articles publiés par la communauté.</p>
+          <span class="card-link">Explorer les ressources ↗</span>
+        </a>
+        <a class="feature-card" href="publier.html">
+          <span class="feature-icon">＋</span>
+          <h3>Publier ses travaux</h3>
+          <p>Partage tes documents, présente tes recherches et apporte ta contribution aux autres étudiants.</p>
+          <span class="card-link">Publier un document ↗</span>
+        </a>
+        <a class="feature-card" href="discussions.html">
+          <span class="feature-icon">◎</span>
+          <h3>Discussions et entraide</h3>
+          <p>Pose tes questions, confronte tes idées et échange autour de tes matières et de tes projets.</p>
+          <span class="card-link">Rejoindre les échanges ↗</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="section dark-section">
+      <div class="section-heading">
+        <span class="eyebrow">COMMENT ÇA MARCHE ?</span>
+        <h2>Ton parcours commence <span>ici.</span></h2>
+      </div>
+      <div class="steps-grid">
+        <article class="step-card">
+          <span class="step-number">01</span>
+          <h3>Rejoins la communauté</h3>
+          <p>Crée ton compte et présente ton parcours universitaire.</p>
+        </article>
+        <article class="step-card">
+          <span class="step-number">02</span>
+          <h3>Découvre et contribue</h3>
+          <p>Consulte les ressources ou publie tes propres travaux.</p>
+        </article>
+        <article class="step-card">
+          <span class="step-number">03</span>
+          <h3>Échange et progresse</h3>
+          <p>Participe aux discussions et construis ton réseau universitaire.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section values-section">
+      <div class="section-heading">
+        <span class="eyebrow dark-eyebrow">NOTRE ENGAGEMENT</span>
+        <h2>Le partage, avec <span>responsabilité.</span></h2>
+      </div>
+      <div class="values-grid">
+        <article><h3>Intégrité académique</h3><p>Respecter les auteurs, citer les sources et distinguer son travail de celui des autres.</p></article>
+        <article><h3>Entraide universitaire</h3><p>Favoriser la transmission des connaissances dans un esprit de respect et de solidarité.</p></article>
+        <article><h3>Respect mutuel</h3><p>Échanger des idées dans un environnement constructif et accueillant.</p></article>
+      </div>
+    </section>
+
+    <section class="join-banner">
+      <span class="eyebrow">TON CAMPUS, EN PLUS GRAND</span>
+      <h2>Le prochain travail qui aidera quelqu'un pourrait être le tien.</h2>
+      <p>Rejoins KAMPUSYA et donne une nouvelle portée à tes connaissances.</p>
+      <div class="hero-actions">
+        <a href="connexion.html" class="button button-lime">Rejoindre KAMPUSYA ↗</a>
+        <a href="communaute.html" class="button button-outline">Découvrir les ressources</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <a class="brand footer-brand" href="index.html"><span class="brand-icon">K</span><span>KAMPUSYA<span class="brand-dot">.</span></span></a>
+    <p>La connaissance circule. La communauté progresse.</p>
+    <div class="footer-links">
+      <a href="communaute.html">Communauté</a>
+      <a href="publier.html">Publier</a>
+      <a href="discussions.html">Discussions</a>
+      <a href="contact.html">Contact</a>
     </div>
-    <div class="hero-bottom"><span>APPRENDRE ENSEMBLE. RÉUSSIR ENSEMBLE.</span><span>Une idée partagée peut faire la différence.</span></div>
-  </div>
-  <section class="section">
-    <div class="heading"><span class="eyebrow">TON ESPACE DE TRAVAIL</span><h2>Tout ce qui fait avancer <span>ta vie universitaire.</span></h2><p>Une plateforme conçue pour valoriser les travaux étudiants et rendre les connaissances plus accessibles.</p></div>
-    <div class="grid">
-      <a class="card" href="#communaute" data-page="communaute"><span class="card-icon">▤</span><h3>Bibliothèque universitaire</h3><p>Découvre TD, exposés, mémoires, fiches de révision et articles.</p><span class="card-link">Explorer les ressources ↗</span></a>
-      <a class="card" href="#publier" data-page="publier"><span class="card-icon">＋</span><h3>Publier ses travaux</h3><p>Partage tes documents et présente tes recherches à la communauté.</p><span class="card-link">Publier un document ↗</span></a>
-      <a class="card" href="#discussions" data-page="discussions"><span class="card-icon">◎</span><h3>Discussions et entraide</h3><p>Pose tes questions et échange autour de tes matières et projets.</p><span class="card-link">Rejoindre les échanges ↗</span></a>
-    </div>
-  </section>
-  <section class="section dark-section">
-    <div class="heading"><span class="eyebrow">COMMENT ÇA MARCHE ?</span><h2>Ton parcours commence <span>ici.</span></h2><p>Trois étapes pour faire partie d'une communauté de partage.</p></div>
-    <div class="grid">
-      <article class="step"><b>01</b><h3>Rejoins la communauté</h3><p>Crée ton compte et présente ton parcours universitaire.</p></article>
-      <article class="step"><b>02</b><h3>Découvre et contribue</h3><p>Consulte les ressources ou publie tes propres travaux.</p></article>
-      <article class="step"><b>03</b><h3>Échange et progresse</h3><p>Participe aux discussions et construis ton réseau universitaire.</p></article>
-    </div>
-  </section>
-  <section class="section">
-    <div class="heading"><span class="eyebrow">NOTRE ENGAGEMENT</span><h2>Le partage, avec <span>responsabilité.</span></h2></div>
-    <div class="grid">
-      <article class="card"><h3>Intégrité académique</h3><p>Respecter les auteurs, citer les sources et distinguer son travail de celui des autres.</p></article>
-      <article class="card"><h3>Entraide universitaire</h3><p>Favoriser la transmission des connaissances dans un esprit de respect et de solidarité.</p></article>
-      <article class="card"><h3>Respect mutuel</h3><p>Échanger des idées dans un environnement constructif et accueillant.</p></article>
-    </div>
-  </section>
-  <section class="join"><span class="eyebrow">TON CAMPUS, EN PLUS GRAND</span><h2>Le prochain travail qui aidera quelqu'un pourrait être le tien.</h2><p>Rejoins KAMPUSYA et donne une nouvelle portée à tes connaissances.</p><div class="actions" style="justify-content:center"><a class="btn btn-lime" href="#inscription" data-page="inscription">Rejoindre KAMPUSYA ↗</a><a class="btn btn-outline" href="#communaute" data-page="communaute">Découvrir les ressources</a></div></section>
-</section>
-
-<section class="view" id="view-communaute">
-  <div class="page-hero"><span class="eyebrow">LE SAVOIR EN COMMUN</span><h1>La communauté KAMPUSYA</h1><p>Explore les ressources universitaires partagées par les membres.</p></div>
-  <div class="content">
-    <div class="panel"><label for="searchPosts"><strong>Rechercher un travail</strong></label><input class="search-input" id="searchPosts" placeholder="Titre, matière, catégorie…"><p class="muted">Les travaux ajoutés sur cet appareil apparaissent ici. Une base partagée sera nécessaire pour tous les utilisateurs.</p><a class="btn btn-lime" href="#publier" data-page="publier">＋ Publier un travail</a></div>
-    <div id="postsList"></div>
-  </div>
-</section>
-
-<section class="view" id="view-publier">
-  <div class="page-hero"><span class="eyebrow">PARTAGE TES CONNAISSANCES</span><h1>Publie un travail universitaire</h1><p>Ajoute une ressource utile à la communauté.</p></div>
-  <div class="content"><div class="panel"><form id="publishForm" class="form">
-    <label>Titre du travail<input name="title" required maxlength="180" placeholder="Ex. : TD de droit des obligations"></label>
-    <label>Catégorie<select name="category"><option>TD et exercices</option><option>Exposé</option><option>Mémoire</option><option>Sujet d'examen</option><option>Fiche de révision</option><option>Article de recherche</option><option>Autre</option></select></label>
-    <label>Université ou établissement<input name="university" maxlength="180" placeholder="Nom de ton établissement"></label>
-    <label>Matière<input name="subject" maxlength="180" placeholder="Ex. : Droit civil"></label>
-    <label>Description<textarea name="description" required maxlength="2000" placeholder="Présente le contenu et l'intérêt du document."></textarea></label>
-    <label>Contenu du travail<textarea name="content" placeholder="Tu peux coller un extrait ou le texte de ton travail."></textarea></label>
-    <label>Adresse du document (facultatif)<input name="fileurl" type="url" placeholder="Lien vers ton document partagé"></label>
-    <p class="muted">N'ajoute que des liens vers des documents que tu es autorisé à partager. Cette version ne téléverse pas les fichiers directement.</p>
-    <button class="btn btn-dark" type="submit">Publier mon travail</button><p class="status" id="publishStatus" role="status"></p>
-  </form></div></div>
-</section>
-
-<section class="view" id="view-discussions">
-  <div class="page-hero"><span class="eyebrow">ÉCHANGE · COMPRENDS · PROGRESSE</span><h1>Les idées se construisent ensemble.</h1><p>Pose une question, propose un sujet de réflexion ou ouvre une discussion.</p></div>
-  <div class="content">
-    <div class="panel"><h2>Ouvrir une discussion</h2><form id="discussionForm" class="form">
-      <label>Sujet<input name="subject" required maxlength="180" placeholder="Ex. : Comment réussir un commentaire d'arrêt ?"></label>
-      <label>Catégorie<select name="category"><option>Droit</option><option>Économie et gestion</option><option>Sciences et technologie</option><option>Vie universitaire</option><option>Orientation</option><option>Autre</option></select></label>
-      <label>Message<textarea name="message" required maxlength="4000" placeholder="Présente ta question ou ton idée…"></textarea></label>
-      <button class="btn btn-dark" type="submit">Publier la discussion</button><p class="status" id="discussionStatus" role="status"></p>
-    </form></div>
-    <div id="discussionList"></div>
-  </div>
-</section>
-
-<section class="view" id="view-messages">
-  <div class="page-hero"><span class="eyebrow">ÉCHANGES PRIVÉS</span><h1>Messagerie KAMPUSYA</h1><p>Un espace conçu pour les échanges entre membres.</p></div>
-  <div class="content"><div class="panel">
-    <div class="notice">Cette démonstration conserve les messages sur cet appareil seulement. Les conversations réellement privées entre utilisateurs nécessitent des comptes et une base de données sécurisée.</div>
-    <form id="messageForm" class="form">
-      <label>Nom du destinataire<input name="recipient" required maxlength="100" placeholder="Nom du membre"></label>
-      <label>Message<textarea name="message" required maxlength="2000" placeholder="Écris ton message…"></textarea></label>
-      <button class="btn btn-dark" type="submit">Envoyer le message</button><p id="messageStatus" class="status" role="status"></p>
-    </form>
-  </div><div id="messageList"></div></div>
-</section>
-
-<section class="view" id="view-connexion">
-  <div class="page-hero"><span class="eyebrow">CONTENT DE TE REVOIR</span><h1>Connexion</h1><p>Retrouve ton espace KAMPUSYA.</p></div>
-  <div class="content"><div class="panel"><form id="loginForm" class="form">
-    <label>Adresse e-mail<input name="email" type="email" required placeholder="toi@exemple.com"></label>
-    <label>Mot de passe<input name="password" type="password" required minlength="6" placeholder="Ton mot de passe"></label>
-    <button class="btn btn-dark" type="submit">Se connecter</button><p class="status" id="loginStatus" role="status"></p>
-    <p>Pas encore membre ? <a class="card-link" href="#inscription" data-page="inscription">Créer un compte</a></p>
-  </form></div></div>
-</section>
-
-<section class="view" id="view-inscription">
-  <div class="page-hero"><span class="eyebrow">TON CAMPUS, EN PLUS GRAND</span><h1>Rejoins KAMPUSYA</h1><p>Crée ton profil et commence à partager tes connaissances.</p></div>
-  <div class="content"><div class="panel"><form id="signupForm" class="form">
-    <label>Nom complet<input name="name" required maxlength="120" placeholder="Prénom et nom"></label>
-    <label>Adresse e-mail<input name="email" type="email" required placeholder="toi@exemple.com"></label>
-    <label>Université<input name="university" maxlength="180" placeholder="Ton établissement"></label>
-    <label>Filière<input name="field" maxlength="150" placeholder="Ex. : Droit privé"></label>
-    <label>Mot de passe<input name="password" type="password" required minlength="6" placeholder="Au moins 6 caractères"></label>
-    <button class="btn btn-dark" type="submit">Créer mon compte</button><p class="status" id="signupStatus" role="status"></p>
-    <p class="muted">Dans cette version autonome, le profil est enregistré localement dans ce navigateur, pas sur un serveur partagé.</p>
-  </form></div></div>
-</section>
-
-<section class="view" id="view-profil">
-  <div class="page-hero"><span class="eyebrow">MON ESPACE</span><h1>Mon profil</h1><p>Retrouve les informations de ton compte sur cet appareil.</p></div>
-  <div class="content"><div class="panel" id="profileDetails"></div><button class="btn btn-dark" id="logoutBtn">Se déconnecter</button></div>
-</section>
-
-<section class="view" id="view-contact">
-  <div class="page-hero"><span class="eyebrow">NOUS CONTACTER</span><h1>Parlons de KAMPUSYA</h1><p>Une suggestion, une question ou une idée d'amélioration ?</p></div>
-  <div class="content"><div class="panel"><form class="form" id="contactForm">
-    <label>Nom<input name="name" required maxlength="120"></label><label>E-mail<input name="email" type="email" required></label>
-    <label>Objet<input name="subject" required maxlength="180"></label><label>Message<textarea name="message" required maxlength="3000"></textarea></label>
-    <button class="btn btn-dark" type="submit">Préparer le message</button><p id="contactStatus" class="status" role="status"></p>
-  </form></div></div>
-</section>
-</main>
-
-<footer class="footer">
-  <a class="brand" href="#accueil" data-page="accueil"><span class="brand-icon">K</span><span>KAMPUSYA<span class="brand-dot">.</span></span></a>
-  <p>La connaissance circule. La communauté progresse.</p>
-  <div class="footer-links"><a href="#accueil" data-page="accueil">Accueil</a><a href="#communaute" data-page="communaute">Communauté</a><a href="#publier" data-page="publier">Publier</a><a href="#discussions" data-page="discussions">Discussions</a><a href="#contact" data-page="contact">Contact</a></div>
-  <small>© <span id="year"></span> KAMPUSYA. Tous droits réservés.</small>
-</footer>
-
-<script>
-(() => {
-"use strict";
-const $ = (selector, root=document) => root.querySelector(selector);
-const $$ = (selector, root=document) => [...root.querySelectorAll(selector)];
-const KEYS = {posts:"kampusya_posts_demo", discussions:"kampusya_discussions_demo", messages:"kampusya_messages_demo", users:"kampusya_users_demo", current:"kampusya_current_demo", comments:"kampusya_comments_demo"};
-const read = key => { try { return JSON.parse(localStorage.getItem(key) || "[]"); } catch { return []; } };
-const write = (key, value) => localStorage.setItem(key, JSON.stringify(value));
-const currentUser = () => { try { return JSON.parse(localStorage.getItem(KEYS.current) || "null"); } catch { return null; } };
-const escapeHTML = value => String(value ?? "").replace(/[&<>"']/g, char => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[char]));
-const makeId = () => Date.now().toString(36) + Math.random().toString(36).slice(2,8);
-const dateText = date => new Date(date).toLocaleDateString("fr-FR", {day:"2-digit",month:"short",year:"numeric"});
-const status = (id, message, error=false) => { const el=$("#"+id); if(el){el.textContent=message;el.style.color=error?"#a32222":"#28623c";} };
-$("#year").textContent = new Date().getFullYear();
-
-function go(page) {
-  const valid = ["accueil","communaute","publier","discussions","messages","connexion","inscription","profil","contact"];
-  if(page==="profil" && !currentUser()) page="connexion";
-  if(!valid.includes(page)) page="accueil";
-  $$(".view").forEach(view=>view.classList.toggle("active",view.id==="view-"+page));
-  $$(".nav [data-page]").forEach(link=>link.classList.toggle("active",link.dataset.page===page));
-  $("#navigation").classList.remove("open");
-  if(location.hash !== "#"+page) history.pushState({page}, "", "#"+page);
-  if(page==="communaute") renderPosts();
-  if(page==="discussions") renderDiscussions();
-  if(page==="messages") renderMessages();
-  if(page==="profil") renderProfile();
-  window.scrollTo({top:0,behavior:"smooth"});
-}
-function pageFromHash(){return (location.hash||"#accueil").slice(1);}
-document.addEventListener("click", event=>{
-  const link=event.target.closest("[data-page]");
-  if(!link) return;
-  const page=link.dataset.page;
-  if(!page) return;
-  event.preventDefault(); go(page);
-});
-window.addEventListener("popstate",()=>go(pageFromHash()));
-$("#menuToggle").addEventListener("click",()=>$("#navigation").classList.toggle("open"));
-
-function renderPosts(filter="") {
-  const container=$("#postsList"); if(!container)return;
-  const posts=read(KEYS.posts).filter(post=>(post.title+" "+post.category+" "+post.subject+" "+post.description).toLowerCase().includes(filter.toLowerCase()));
-  if(!posts.length){container.innerHTML='<div class="empty">Aucun travail trouvé pour le moment.<br>Tu peux être le premier à publier une ressource.</div>';return;}
-  container.innerHTML=posts.map(post=>{
-    const comments=read(KEYS.comments).filter(c=>c.postId===post.id);
-    return `<article class="post" data-post="${escapeHTML(post.id)}"><div class="post-top"><span class="pill">${escapeHTML(post.category)}</span><small>${escapeHTML(post.author)} · ${dateText(post.createdAt)}</small></div><h3>${escapeHTML(post.title)}</h3><small>${escapeHTML(post.university||"")} ${post.subject?"· "+escapeHTML(post.subject):""}</small><p>${escapeHTML(post.description)}</p>${post.content?`<p>${escapeHTML(post.content)}</p>`:""}${post.fileurl?`<p><a class="card-link" href="${escapeHTML(post.fileurl)}" target="_blank" rel="noopener noreferrer">Ouvrir le document ↗</a></p>`:""}<div class="post-actions"><button class="small-btn" data-action="comment-toggle" data-id="${escapeHTML(post.id)}">💬 Commentaires (${comments.length})</button>${currentUser()&&currentUser().name===post.author?`<button class="small-btn" data-action="delete-post" data-id="${escapeHTML(post.id)}">Supprimer</button>`:""}</div><div class="comment-list" id="comments-${escapeHTML(post.id)}" hidden>${comments.map(c=>`<div class="comment"><strong>${escapeHTML(c.author)} :</strong> ${escapeHTML(c.text)}</div>`).join("")}<form class="comment-form" data-comment-form="${escapeHTML(post.id)}"><input name="comment" required maxlength="1000" placeholder="Écrire un commentaire…"><button class="small-btn" type="submit">Envoyer</button></form></div></article>`;
-  }).join("");
-}
-$("#searchPosts").addEventListener("input",e=>renderPosts(e.target.value));
-
-$("#publishForm").addEventListener("submit",event=>{
-  event.preventDefault();
-  const user=currentUser();
-  if(!user){status("publishStatus","Connecte-toi ou crée un compte avant de publier.",true);return;}
-  const data=new FormData(event.currentTarget);
-  const post={id:makeId(),title:String(data.get("title")).trim(),category:String(data.get("category")),university:String(data.get("university")).trim(),subject:String(data.get("subject")).trim(),description:String(data.get("description")).trim(),content:String(data.get("content")).trim(),fileurl:String(data.get("fileurl")).trim(),author:user.name,createdAt:new Date().toISOString()};
-  if(!post.title||!post.description){status("publishStatus","Renseigne le titre et la description.",true);return;}
-  const posts=read(KEYS.posts);posts.unshift(post);write(KEYS.posts,posts);
-  event.currentTarget.reset();status("publishStatus","Publication ajoutée sur cet appareil. Elle n'est pas encore partagée en ligne.");
-});
-
-document.addEventListener("submit",event=>{
-  const form=event.target.closest("[data-comment-form]");
-  if(!form)return;
-  event.preventDefault();
-  const user=currentUser();
-  if(!user){alert("Connecte-toi pour commenter.");go("connexion");return;}
-  const data=new FormData(form);const text=String(data.get("comment")||"").trim();if(!text)return;
-  const comments=read(KEYS.comments);comments.push({id:makeId(),postId:form.dataset.commentForm,author:user.name,text,createdAt:new Date().toISOString()});write(KEYS.comments,comments);renderPosts($("#searchPosts").value);
-});
-
-document.addEventListener("click",event=>{
-  const button=event.target.closest("[data-action]");if(!button)return;
-  const id=button.dataset.id;
-  if(button.dataset.action==="comment-toggle"){const el=$("#comments-"+CSS.escape(id));if(el)el.hidden=!el.hidden;}
-  if(button.dataset.action==="delete-post"){
-    const user=currentUser();if(!user)return;
-    const posts=read(KEYS.posts);const post=posts.find(p=>p.id===id);
-    if(post&&post.author===user.name&&confirm("Supprimer cette publication ?")){
-      write(KEYS.posts,posts.filter(p=>p.id!==id));write(KEYS.comments,read(KEYS.comments).filter(c=>c.postId!==id));renderPosts($("#searchPosts").value);
-    }
-  }
-});
-
-$("#discussionForm").addEventListener("submit",event=>{
-  event.preventDefault();const user=currentUser();
-  if(!user){status("discussionStatus","Connecte-toi pour ouvrir une discussion.",true);return;}
-  const data=new FormData(event.currentTarget);const subject=String(data.get("subject")).trim();const message=String(data.get("message")).trim();
-  if(!subject||!message)return;
-  const items=read(KEYS.discussions);items.unshift({id:makeId(),subject,category:String(data.get("category")),message,author:user.name,createdAt:new Date().toISOString()});write(KEYS.discussions,items);
-  event.currentTarget.reset();status("discussionStatus","Discussion ajoutée sur cet appareil.");renderDiscussions();
-});
-function renderDiscussions(){
-  const container=$("#discussionList");if(!container)return;
-  const items=read(KEYS.discussions);
-  container.innerHTML=items.length?items.map(item=>`<article class="post"><span class="pill">${escapeHTML(item.category)}</span><h3>${escapeHTML(item.subject)}</h3><small>${escapeHTML(item.author)} · ${dateText(item.createdAt)}</small><p>${escapeHTML(item.message)}</p></article>`).join(""):'<div class="empty">Aucune discussion pour le moment. Lance le premier sujet !</div>';
-}
-
-$("#messageForm").addEventListener("submit",event=>{
-  event.preventDefault();const user=currentUser();
-  if(!user){status("messageStatus","Connecte-toi pour préparer un message.",true);return;}
-  const data=new FormData(event.currentTarget);const recipient=String(data.get("recipient")).trim();const message=String(data.get("message")).trim();
-  if(!recipient||!message)return;
-  const items=read(KEYS.messages);items.unshift({id:makeId(),recipient,message,sender:user.name,createdAt:new Date().toISOString()});write(KEYS.messages,items);event.currentTarget.reset();status("messageStatus","Message conservé localement. Il n'a pas été transmis à un autre utilisateur.");renderMessages();
-});
-function renderMessages(){
-  const container=$("#messageList");if(!container)return;
-  const user=currentUser();const items=read(KEYS.messages).filter(m=>m.sender===user?.name);
-  container.innerHTML=items.length?items.map(m=>`<article class="post"><small>À : ${escapeHTML(m.recipient)} · ${dateText(m.createdAt)}</small><p>${escapeHTML(m.message)}</p></article>`).join(""):'<div class="empty">Tes messages préparés apparaîtront ici.</div>';
-}
-
-$("#signupForm").addEventListener("submit",event=>{
-  event.preventDefault();const data=new FormData(event.currentTarget);
-  const name=String(data.get("name")).trim(),email=String(data.get("email")).trim().toLowerCase(),password=String(data.get("password"));
-  if(password.length<6){status("signupStatus","Le mot de passe doit contenir au moins 6 caractères.",true);return;}
-  const users=read(KEYS.users);
-  if(users.some(u=>u.email===email)){status("signupStatus","Un compte local utilise déjà cette adresse.",true);return;}
-  const user={id:makeId(),name,email,university:String(data.get("university")).trim(),field:String(data.get("field")).trim(),password};
-  users.push(user);write(KEYS.users,users);localStorage.setItem(KEYS.current,JSON.stringify({id:user.id,name:user.name,email:user.email,university:user.university,field:user.field}));
-  event.currentTarget.reset();status("signupStatus","Compte de démonstration créé sur cet appareil.");setTimeout(()=>go("profil"),500);
-});
-$("#loginForm").addEventListener("submit",event=>{
-  event.preventDefault();const data=new FormData(event.currentTarget);const email=String(data.get("email")).trim().toLowerCase(),password=String(data.get("password"));
-  const user=read(KEYS.users).find(u=>u.email===email&&u.password===password);
-  if(!user){status("loginStatus","Compte introuvable dans ce navigateur. Crée d'abord un compte de démonstration.",true);return;}
-  localStorage.setItem(KEYS.current,JSON.stringify({id:user.id,name:user.name,email:user.email,university:user.university,field:user.field}));
-  status("loginStatus","Connexion locale réussie.");setTimeout(()=>go("profil"),400);
-});
-function renderProfile(){
-  const el=$("#profileDetails"),user=currentUser();if(!el)return;
-  if(!user){el.innerHTML='<p>Tu n’es pas connecté.</p>';return;}
-  el.innerHTML=`<div class="profile-row"><div class="avatar">${escapeHTML(user.name.slice(0,1).toUpperCase())}</div><div><h2>${escapeHTML(user.name)}</h2><small>${escapeHTML(user.email)}</small></div></div><p><strong>Université :</strong> ${escapeHTML(user.university||"Non renseignée")}</p><p><strong>Filière :</strong> ${escapeHTML(user.field||"Non renseignée")}</p><p class="muted">Profil de démonstration enregistré dans ce navigateur.</p><button class="btn btn-light" id="editProfile">Modifier mes informations</button><div id="editProfileBox" class="hidden"><form id="editProfileForm" class="form"><label>Nom<input name="name" required value="${escapeHTML(user.name)}"></label><label>Université<input name="university" value="${escapeHTML(user.university||"")}"></label><label>Filière<input name="field" value="${escapeHTML(user.field||"")}"></label><button class="btn btn-dark">Enregistrer</button></form></div>`;
-  $("#editProfile").addEventListener("click",()=>$("#editProfileBox").classList.toggle("hidden"));
-  $("#editProfileForm").addEventListener("submit",e=>{
-    e.preventDefault();const data=new FormData(e.currentTarget);const updated={...user,name:String(data.get("name")).trim(),university:String(data.get("university")).trim(),field:String(data.get("field")).trim()};
-    const users=read(KEYS.users).map(u=>u.id===user.id?{...u,...updated}:u);write(KEYS.users,users);localStorage.setItem(KEYS.current,JSON.stringify(updated));renderProfile();
-  });
-}
-$("#logoutBtn").addEventListener("click",()=>{localStorage.removeItem(KEYS.current);go("accueil");});
-$("#contactForm").addEventListener("submit",event=>{
-  event.preventDefault();const data=new FormData(event.currentTarget);
-  const subject=encodeURIComponent("[KAMPUSYA] "+String(data.get("subject")));
-  const body=encodeURIComponent("Nom : "+data.get("name")+"\nE-mail : "+data.get("email")+"\n\n"+data.get("message"));
-  status("contactStatus","Le formulaire est prêt. Pour l'envoyer, il faut configurer une adresse e-mail de contact ou un service serveur.");
-  const link=document.createElement("a");link.href="mailto:?subject="+subject+"&body="+body;link.className="btn btn-light";link.textContent="Ouvrir mon application e-mail";
-  const old=event.currentTarget.querySelector(".mailto-link");if(old)old.remove();link.classList.add("mailto-link");event.currentTarget.append(link);
-});
-
-const initial=pageFromHash();
-go(["accueil","communaute","publier","discussions","messages","connexion","inscription","profil","contact"].includes(initial)?initial:"accueil");
-})();
-</script>
+    <small>© <span id="year"></span> KAMPUSYA. Tous droits réservés.</small>
+  </footer>
+  <script src="js/app.js"></script>
 </body>
 </html>
