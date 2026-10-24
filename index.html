@@ -1,142 +1,581 @@
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#07251d">
-  <meta name="description" content="KAMPUSYA, la communauté universitaire pour publier, partager et découvrir des travaux, TD, exposés, mémoires et sujets d'examen.">
-  <title>KAMPUSYA — Le savoir se partage</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>KAMPUSYA — Publier, partager et progresser ensemble</title>
+  <meta name="description" content="KAMPUSYA, la plateforme universitaire de partage des travaux, de ressources pédagogiques et de discussions entre étudiants.">
+  <meta name="theme-color" content="#0d3a2d">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-  <header class="header">
-    <a class="brand" href="index.html">
-      <span class="brand-icon">K</span>
-      <span>KAMPUSYA<span class="brand-dot">.</span></span>
-    </a>
-    <button class="menu-toggle" id="menuToggle" aria-label="Ouvrir le menu">☰</button>
-    <nav class="navigation" id="navigation">
-      <a class="active" href="index.html">Accueil</a>
-      <a href="communaute.html">Communauté</a>
-      <a href="discussions.html">Discussions</a>
-      <a href="#ressources">Ressources</a>
-      <a href="contact.html">Contact</a>
-      <a class="nav-login" href="connexion.html">Connexion</a>
-      <a class="button button-lime" href="publier.html">Publier un travail</a>
-    </nav>
-  </header>
+<div id="hdr"></div>
 
-  <main>
-    <section class="hero">
-      <div class="hero-shade"></div>
-      <div class="hero-content">
-        <span class="eyebrow">LA COMMUNAUTÉ UNIVERSITAIRE QUI VOUS FAIT GRANDIR</span>
-        <h1>Le savoir prend de la valeur <span>quand il se partage.</span></h1>
-        <p>KAMPUSYA rassemble les étudiants autour des connaissances, des travaux universitaires et de l'entraide. Publie, découvre, échange et progresse avec les autres.</p>
-        <div class="hero-actions">
-          <a class="button button-lime" href="communaute.html">Explorer la communauté ↗</a>
-          <a class="button button-outline" href="connexion.html">Créer mon compte</a>
-        </div>
-        <div class="hero-tags">
-          <span>TD & exercices</span><span>Exposés</span><span>Mémoires</span>
-          <span>Sujets d'examen</span><span>Discussions</span>
-        </div>
-      </div>
-      <div class="hero-bottom">
-        <span>APPRENDRE ENSEMBLE. RÉUSSIR ENSEMBLE.</span>
-        <span>Une idée partagée peut faire la différence.</span>
-      </div>
-    </section>
+<main>
 
-    <section class="section intro" id="ressources">
-      <div class="section-heading">
-        <span class="eyebrow dark-eyebrow">TON ESPACE DE TRAVAIL</span>
-        <h2>Tout ce qui fait avancer <span>ta vie universitaire.</span></h2>
-        <p>Une plateforme conçue pour valoriser les travaux étudiants et rendre les connaissances plus accessibles.</p>
-      </div>
-      <div class="feature-grid">
-        <a class="feature-card" href="communaute.html">
-          <span class="feature-icon">▤</span>
-          <h3>Bibliothèque universitaire</h3>
-          <p>Découvre des TD, exposés, mémoires, fiches de révision et articles publiés par la communauté.</p>
-          <span class="card-link">Explorer les ressources ↗</span>
-        </a>
-        <a class="feature-card" href="publier.html">
-          <span class="feature-icon">＋</span>
-          <h3>Publier ses travaux</h3>
-          <p>Partage tes documents, présente tes recherches et apporte ta contribution aux autres étudiants.</p>
-          <span class="card-link">Publier un document ↗</span>
-        </a>
-        <a class="feature-card" href="discussions.html">
-          <span class="feature-icon">◎</span>
-          <h3>Discussions et entraide</h3>
-          <p>Pose tes questions, confronte tes idées et échange autour de tes matières et de tes projets.</p>
-          <span class="card-link">Rejoindre les échanges ↗</span>
-        </a>
-      </div>
-    </section>
+  <!-- ACCUEIL -->
+  <section class="hero">
+    <div class="wrap">
+      <small>LA COMMUNAUTÉ UNIVERSITAIRE QUI VOUS FAIT GRANDIR</small>
 
-    <section class="section dark-section">
-      <div class="section-heading">
-        <span class="eyebrow">COMMENT ÇA MARCHE ?</span>
-        <h2>Ton parcours commence <span>ici.</span></h2>
-      </div>
-      <div class="steps-grid">
-        <article class="step-card">
-          <span class="step-number">01</span>
-          <h3>Rejoins la communauté</h3>
-          <p>Crée ton compte et présente ton parcours universitaire.</p>
-        </article>
-        <article class="step-card">
-          <span class="step-number">02</span>
-          <h3>Découvre et contribue</h3>
-          <p>Consulte les ressources ou publie tes propres travaux.</p>
-        </article>
-        <article class="step-card">
-          <span class="step-number">03</span>
-          <h3>Échange et progresse</h3>
-          <p>Participe aux discussions et construis ton réseau universitaire.</p>
-        </article>
-      </div>
-    </section>
+      <h1>Le savoir prend de la valeur quand il se partage.</h1>
 
-    <section class="section values-section">
-      <div class="section-heading">
-        <span class="eyebrow dark-eyebrow">NOTRE ENGAGEMENT</span>
-        <h2>Le partage, avec <span>responsabilité.</span></h2>
-      </div>
-      <div class="values-grid">
-        <article><h3>Intégrité académique</h3><p>Respecter les auteurs, citer les sources et distinguer son travail de celui des autres.</p></article>
-        <article><h3>Entraide universitaire</h3><p>Favoriser la transmission des connaissances dans un esprit de respect et de solidarité.</p></article>
-        <article><h3>Respect mutuel</h3><p>Échanger des idées dans un environnement constructif et accueillant.</p></article>
-      </div>
-    </section>
+      <p class="sub">
+        Publiez vos travaux universitaires, découvrez les idées d'autres étudiants
+        et faites avancer votre parcours grâce à une communauté qui apprend ensemble.
+      </p>
 
-    <section class="join-banner">
-      <span class="eyebrow">TON CAMPUS, EN PLUS GRAND</span>
-      <h2>Le prochain travail qui aidera quelqu'un pourrait être le tien.</h2>
-      <p>Rejoins KAMPUSYA et donne une nouvelle portée à tes connaissances.</p>
-      <div class="hero-actions">
-        <a href="connexion.html" class="button button-lime">Rejoindre KAMPUSYA ↗</a>
-        <a href="communaute.html" class="button button-outline">Découvrir les ressources</a>
-      </div>
-    </section>
-  </main>
+      <a class="btn lime" href="#publications">Explorer les travaux</a>
+      <a class="btn dark" href="connexion.html#signup">Rejoindre KAMPUSYA</a>
 
-  <footer class="footer">
-    <a class="brand footer-brand" href="index.html"><span class="brand-icon">K</span><span>KAMPUSYA<span class="brand-dot">.</span></span></a>
-    <p>La connaissance circule. La communauté progresse.</p>
-    <div class="footer-links">
-      <a href="communaute.html">Communauté</a>
-      <a href="publier.html">Publier</a>
-      <a href="discussions.html">Discussions</a>
-      <a href="contact.html">Contact</a>
+      <small>
+        TD · Exposés · Mémoires · Sujets d'examen · Discussions
+      </small>
+
+      <div class="rate">Un espace pour apprendre, contribuer et progresser.</div>
     </div>
-    <small>© <span id="year"></span> KAMPUSYA. Tous droits réservés.</small>
-  </footer>
-  <script src="js/app.js"></script>
+
+    <div class="stage">
+      <div class="tile t1">
+        Travaux universitaires
+        <span>Publiez vos recherches et vos TD</span>
+      </div>
+
+      <div class="tile t2">
+        Communauté
+        <span>Apprenez avec d'autres étudiants</span>
+      </div>
+
+      <div class="phone">
+        <div class="scr">
+          <div class="t">Bienvenue sur</div>
+          <div class="bal">KAMPUSYA</div>
+
+          <div class="card">
+            LE SAVOIR EN PARTAGE
+            <b>Publier · Échanger · Progresser</b>
+          </div>
+
+          <div class="mini">
+            <div>
+              Explorer
+              <strong>Les travaux</strong>
+              <div class="spark"></div>
+            </div>
+            <div>
+              Participer
+              <strong>Les discussions</strong>
+              <div class="spark"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tile t3">
+        Ressources
+        <span>Des contenus pour approfondir</span>
+      </div>
+
+      <div class="tile t4">
+        Échanges
+        <span>Des idées qui se rencontrent</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- DOMAINES -->
+  <div class="logos">
+    <div class="marq">
+      <span>DROIT</span>
+      <span>ÉCONOMIE</span>
+      <span>SCIENCES</span>
+      <span>GESTION</span>
+      <span>TECHNOLOGIE</span>
+      <span>LETTRES</span>
+      <span>RECHERCHE</span>
+      <span>DROIT</span>
+      <span>ÉCONOMIE</span>
+      <span>SCIENCES</span>
+      <span>GESTION</span>
+      <span>TECHNOLOGIE</span>
+      <span>LETTRES</span>
+      <span>RECHERCHE</span>
+    </div>
+  </div>
+
+  <!-- PRÉSENTATION -->
+  <section id="apropos">
+    <div class="wrap">
+      <h2 data-r>Une nouvelle manière de vivre l'université</h2>
+
+      <p class="lead" data-r>
+        KAMPUSYA rapproche les étudiants autour d'une idée simple :
+        chacun peut apprendre des autres et contribuer à l'intelligence collective.
+      </p>
+
+      <div class="grid3">
+        <div class="box" data-r>
+          <div class="ico">01</div>
+          <h3>Partager ses connaissances</h3>
+          <p>
+            Donnez de la visibilité à vos TD, exposés, fiches de révision,
+            mémoires et autres productions universitaires.
+          </p>
+        </div>
+
+        <div class="box" data-r>
+          <div class="ico">02</div>
+          <h3>Découvrir de nouvelles idées</h3>
+          <p>
+            Consultez les contributions de la communauté, enrichissez vos
+            recherches et découvrez d'autres façons d'aborder un sujet.
+          </p>
+        </div>
+
+        <div class="box" data-r>
+          <div class="ico">03</div>
+          <h3>Construire ensemble</h3>
+          <p>
+            Échangez des points de vue, confrontez vos raisonnements et
+            développez une culture du dialogue universitaire.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TRAVAUX UNIVERSITAIRES -->
+  <section id="publications">
+    <div class="wrap">
+      <h2 data-r>Le savoir universitaire, au même endroit</h2>
+
+      <p class="lead" data-r>
+        Découvrez des travaux, partagez vos productions et contribuez
+        à un espace où les connaissances circulent.
+      </p>
+
+      <div class="tabs" data-r>
+        <button class="tab on" data-t="p1">Travaux dirigés</button>
+        <button class="tab" data-t="p2">Exposés et mémoires</button>
+        <button class="tab" data-t="p3">Examens et révisions</button>
+        <button class="tab" data-t="p4">Recherches et articles</button>
+      </div>
+
+      <div class="panel on" id="p1">
+        <div>
+          <small>Comprendre · S'exercer · Approfondir</small>
+          <h3>Les travaux dirigés</h3>
+          <p>
+            Retrouvez des sujets de TD, des plans, des exercices et des
+            corrigés proposés par les membres. Partagez également vos propres
+            travaux pour aider d'autres étudiants à progresser.
+          </p>
+          <a class="btn dark" href="connexion.html#signup">Partager un TD</a>
+        </div>
+
+        <div class="vis">
+          <div>
+            <div class="pill">
+              Droit et sciences juridiques
+              <em>TD · Cas pratiques · Commentaires</em>
+            </div>
+            <div class="pill">
+              Sciences et techniques
+              <em>Exercices · Méthodes · Applications</em>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel" id="p2">
+        <div>
+          <small>Présenter · Argumenter · Valoriser</small>
+          <h3>Exposés, mémoires et rapports</h3>
+          <p>
+            Présentez vos productions universitaires, découvrez des sujets
+            de recherche et inspirez-vous des méthodes de travail partagées
+            par la communauté.
+          </p>
+          <a class="btn dark" href="connexion.html#signup">Partager un travail</a>
+        </div>
+
+        <div class="vis">
+          <div>
+            <div class="pill">
+              Exposés universitaires
+              <em>Plans · Présentations · Bibliographies</em>
+            </div>
+            <div class="pill">
+              Mémoires et rapports
+              <em>Recherche · Analyse · Méthodologie</em>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel" id="p3">
+        <div>
+          <small>Réviser · Se préparer · Réussir</small>
+          <h3>Les sujets d'examen</h3>
+          <p>
+            Organisez vos révisions grâce aux sujets partagés, aux fiches
+            de synthèse et aux ressources pédagogiques. Identifiez les
+            notions à approfondir avant vos évaluations.
+          </p>
+          <a class="btn dark" href="connexion.html#signup">Contribuer aux révisions</a>
+        </div>
+
+        <div class="vis">
+          <div>
+            <div class="pill">
+              Sujets d'examen
+              <em>Annales · Épreuves · Entraînement</em>
+            </div>
+            <div class="pill">
+              Fiches de révision
+              <em>Synthèses · Notions clés · Méthodes</em>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel" id="p4">
+        <div>
+          <small>Explorer · Analyser · Innover</small>
+          <h3>Recherches et articles</h3>
+          <p>
+            Faites connaître vos réflexions, partagez des articles et
+            valorisez vos initiatives intellectuelles. Les contributions
+            doivent respecter les règles de citation et la propriété
+            intellectuelle.
+          </p>
+          <a class="btn dark" href="connexion.html#signup">Proposer une contribution</a>
+        </div>
+
+        <div class="vis">
+          <div>
+            <div class="pill">
+              Recherche universitaire
+              <em>Problématiques · Analyses · Résultats</em>
+            </div>
+            <div class="pill">
+              Articles et réflexions
+              <em>Arguments · Sources · Débats</em>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARCOURS DE PUBLICATION -->
+  <section style="padding-top:0">
+    <div class="wrap">
+      <h2 data-r>Vos travaux méritent d'être partagés</h2>
+
+      <p class="lead" data-r>
+        Une démarche simple pour contribuer à la communauté universitaire.
+      </p>
+    </div>
+
+    <div class="cases">
+      <div class="case" style="background:#bfe3ff">
+        <div style="background:#0d3a2d;color:#fff">
+          <b>01. Préparez</b>
+          <p>
+            Choisissez un travail personnel ou une ressource que vous êtes
+            autorisé à partager.
+          </p>
+        </div>
+      </div>
+
+      <div class="case" style="background:#cfe6ff">
+        <div style="background:#cfe6ff">
+          <b>02. Publiez</b>
+          <p>
+            Présentez le sujet, la discipline, le niveau d'études et
+            les informations utiles à la compréhension du document.
+          </p>
+        </div>
+      </div>
+
+      <div class="case" style="background:#dff8a8">
+        <div style="background:#dff8a8">
+          <b>03. Échangez</b>
+          <p>
+            Recueillez des remarques constructives et participez aux
+            échanges autour de votre contribution.
+          </p>
+        </div>
+      </div>
+
+      <div class="case" style="background:#ffd9a0">
+        <div style="background:#ffd9a0">
+          <b>04. Progressez</b>
+          <p>
+            Tirez profit des retours, approfondissez vos connaissances
+            et contribuez à votre tour aux apprentissages des autres.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMMUNAUTÉ -->
+  <section class="stats">
+    <div class="wrap sgrid">
+      <div>
+        <strong>01</strong>
+        <span>Un espace de partage</span>
+      </div>
+      <div>
+        <strong>04+</strong>
+        <span>Formats de contributions</span>
+      </div>
+      <div>
+        <strong>02</strong>
+        <span>Dimensions : savoir et échanges</span>
+      </div>
+      <div>
+        <strong>100%</strong>
+        <span>Une ambition collaborative</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- FONCTIONNALITÉS -->
+  <section id="fonctionnalites">
+    <div class="wrap">
+      <h2 data-r>Bien plus qu'une bibliothèque universitaire</h2>
+
+      <p class="lead" data-r>
+        KAMPUSYA a vocation à réunir les ressources, les échanges et
+        les opportunités d'apprentissage au sein d'une même communauté.
+      </p>
+
+      <div class="grid3">
+        <div class="box" data-r>
+          <div class="ico">01</div>
+          <h3>Publications universitaires</h3>
+          <p>
+            Un espace organisé pour présenter les travaux par discipline,
+            type de document et niveau d'études.
+          </p>
+        </div>
+
+        <div class="box" data-r>
+          <div class="ico">02</div>
+          <h3>Fil d'actualité</h3>
+          <p>
+            Suivez les nouvelles contributions, les annonces et les
+            initiatives de la communauté universitaire.
+          </p>
+        </div>
+
+        <div class="box" data-r>
+          <div class="ico">03</div>
+          <h3>Commentaires et discussions</h3>
+          <p>
+            Posez des questions, apportez des précisions et confrontez
+            vos idées dans un cadre respectueux.
+          </p>
+        </div>
+
+        <div class="box" data-r>
+          <div class="ico">04</div>
+          <h3>Messagerie privée</h3>
+          <p>
+            Échangez directement avec d'autres membres lorsque la
+            fonctionnalité de messagerie sera activée.
+          </p>
+        </div>
+
+        <div class="box" data-r>
+          <div class="ico">05</div>
+          <h3>Profil universitaire</h3>
+          <p>
+            Présentez vos centres d'intérêt, vos domaines d'étude et
+            vos contributions à la communauté.
+          </p>
+        </div>
+
+        <div class="box" data-r>
+          <div class="ico">06</div>
+          <h3>Recherche et découverte</h3>
+          <p>
+            Retrouvez plus facilement les ressources utiles grâce à
+            une organisation claire des contenus.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DISCUSSIONS -->
+  <section id="discussions">
+    <div class="wrap">
+      <h2 data-r>Les idées progressent dans le dialogue</h2>
+
+      <p class="lead" data-r>
+        Une plateforme universitaire ne se limite pas aux documents :
+        elle doit aussi permettre aux étudiants de questionner, débattre
+        et construire des réponses ensemble.
+      </p>
+
+      <div class="grid3">
+        <div class="box" data-r>
+          <div class="ico">A</div>
+          <h3>Poser une question</h3>
+          <p>
+            Demandez une explication, sollicitez des pistes de recherche
+            ou échangez sur une difficulté rencontrée dans vos études.
+          </p>
+        </div>
+
+        <div class="box" data-r>
+          <div class="ico">B</div>
+          <h3>Débattre avec méthode</h3>
+          <p>
+            Présentez vos arguments, confrontez les points de vue et
+            appuyez vos analyses sur des sources fiables.
+          </p>
+        </div>
+
+        <div class="box" data-r>
+          <div class="ico">C</div>
+          <h3>Partager une découverte</h3>
+          <p>
+            Faites connaître une ressource intéressante, une initiative
+            étudiante ou une opportunité d'apprentissage.
+          </p>
+        </div>
+      </div>
+
+      <p style="text-align:center;margin-top:28px">
+        <a class="btn dark" href="connexion.html#signup">Rejoindre la communauté</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- VALEURS -->
+  <section id="engagements">
+    <div class="wrap">
+      <h2 data-r>Un espace fondé sur la confiance et le respect</h2>
+
+      <p class="lead" data-r>
+        La qualité d'une communauté universitaire dépend autant
+        des connaissances partagées que de la manière de les partager.
+      </p>
+
+      <div class="grid3">
+        <div class="box" data-r>
+          <div class="ico">01</div>
+          <h3>Intégrité académique</h3>
+          <p>
+            Respectez les auteurs, citez vos sources et ne présentez
+            jamais le travail d'autrui comme le vôtre.
+          </p>
+        </div>
+
+        <div class="box" data-r>
+          <div class="ico">02</div>
+          <h3>Respect mutuel</h3>
+          <p>
+            Privilégiez les critiques constructives, le dialogue
+            argumenté et la courtoisie dans tous les échanges.
+          </p>
+        </div>
+
+        <div class="box" data-r>
+          <div class="ico">03</div>
+          <h3>Responsabilité collective</h3>
+          <p>
+            Contribuez à un environnement où les ressources sont
+            pertinentes, les échanges utiles et les comportements responsables.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUESTIONS FRÉQUENTES -->
+  <section class="faq" id="faq" style="padding-top:0">
+    <div class="wrap">
+      <h2 data-r>Questions fréquentes</h2>
+      <br>
+
+      <details>
+        <summary>À qui s'adresse KAMPUSYA ?</summary>
+        <p>
+          KAMPUSYA s'adresse principalement aux étudiants et aux membres
+          de la communauté universitaire qui souhaitent partager des
+          ressources, approfondir leurs connaissances et échanger.
+        </p>
+      </details>
+
+      <details>
+        <summary>Quels types de travaux peut-on partager ?</summary>
+        <p>
+          Selon les fonctionnalités activées, la plateforme a vocation à
+          accueillir des TD, exposés, mémoires, rapports, fiches de révision,
+          sujets d'examen et autres contributions universitaires autorisées.
+        </p>
+      </details>
+
+      <details>
+        <summary>Puis-je publier un travail réalisé par une autre personne ?</summary>
+        <p>
+          Vous devez disposer des autorisations nécessaires pour partager
+          un document et respecter les droits de son auteur. Les sources
+          et références doivent être indiquées clairement.
+        </p>
+      </details>
+
+      <details>
+        <summary>Les commentaires et la messagerie sont-ils disponibles ?</summary>
+        <p>
+          Ces espaces font partie de l'ambition de KAMPUSYA. Leur
+          fonctionnement effectif dépend de la mise en place des services
+          de comptes, de stockage et de messagerie.
+        </p>
+      </details>
+
+      <details>
+        <summary>Comment rejoindre KAMPUSYA ?</summary>
+        <p>
+          Utilisez le bouton d'inscription pour accéder à la page de
+          connexion et d'inscription existante.
+        </p>
+      </details>
+    </div>
+  </section>
+
+  <!-- APPEL À L'ACTION -->
+  <div class="wrap">
+    <div class="cta" data-r>
+      <h2>Votre prochain partage peut faire la différence.</h2>
+      <p>
+        Rejoignez une initiative qui place les connaissances,
+        la curiosité et l'entraide au cœur de la vie universitaire.
+      </p>
+      <a class="btn lime" href="connexion.html#signup">Rejoindre KAMPUSYA</a>
+      <a class="btn dark" href="#publications">Explorer les travaux</a>
+    </div>
+  </div>
+
+</main>
+
+<div id="ftr"></div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+<script src="js/supabase.js"></script>
+<script src="js/app.js"></script>
 </body>
 </html>
